@@ -10,25 +10,24 @@ Just use "make" to compile the program.  To run the "hello" program, make sure y
 
 
 Example usage:
-```bash
-gideon@dgx-1:~/hello(master)$ make V=1
+``` sh
+
+gideon@dgx-i7:~/Development/hello$ make V=1
 -> Compiling foo.o
-gcc -c -fPIC -o foo.o foo.c
+gcc -fPIC -c -o foo.o src/foo.c -Iinclude
 -> Compiling libfoo.so
 gcc -shared -o libfoo.so foo.o
--> Compiling hello.o
-gcc -c -fPIC -o hello.o hello.c
 -> Compiling hello
-gcc -o hello hello.o -L. -lfoo 
-gideon@dgx-1:~/hello(master)$ export LD_LIBRARY_PATH=$PWD
-gideon@dgx-1:~/hello(master)$ ldd hello
-	linux-vdso.so.1 =>  (0x00007fff9a18a000)
-	libfoo.so => /home/gideon/hello/libfoo.so (0x00007f345e9ca000)
-	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f345e600000)
-	/lib64/ld-linux-x86-64.so.2 (0x00007f345ebcc000)
-gideon@dgx-1:~/hello(master)$ ./hello 
+gcc -o hello src/hello.c -L. -lfoo -Iinclude
+gideon@dgx-i7:~/Development/hello$ export LD_LIBRARY_PATH=$PWD
+gideon@dgx-i7:~/Development/hello(master *)$ ldd hello 
+	linux-vdso.so.1 =>  (0x00007fd48d821000)
+	libfoo.so => /home/gideon/Development/hello/libfoo.so (0x00007fd48d3fc000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fd48d032000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fd48d5fe000)
+gideon@dgx-i7:~/Development/hello$ ./hello 
 Hello! This is a shared library test!
 
 Hello, I'm a shared library
-gideon@dgx-1:~/hello(master)$ 
+
 ```

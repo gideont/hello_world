@@ -1,5 +1,6 @@
 CC=gcc
 CFLAGS=-Iinclude
+SRC_DIR=src
 
 # make V=1 for verbose mode, quiet by default
 V=0
@@ -11,7 +12,7 @@ else
 	vecho = @true
 	endif
 
-DEPS = foo.c
+DEPS = $(SRC_DIR)/foo.c
 
 all: libfoo.so hello
 
@@ -23,7 +24,7 @@ libfoo.so: foo.o
 	$(vecho) "-> Compiling $@"
 	$(Q)$(CC) -shared -o $@ $^
 
-hello: hello.c
+hello: $(SRC_DIR)/hello.c
 	$(vecho) "-> Compiling $@"
 	$(Q)$(CC) -o $@ $^ -L. -lfoo $(CFLAGS)
 
