@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Iinclude
+CFLAGS=-Iinclude -Wl,-rpath=.
 SRC_DIR=src
 
 # make V=1 for verbose mode, quiet by default

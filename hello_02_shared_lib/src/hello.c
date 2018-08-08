@@ -3,7 +3,7 @@
  
 int main(void)
 {
-    puts("Hello! This is a shared library test!\n");
+    printf("Hello world!\n");
     foo();
     return 0;
 }
