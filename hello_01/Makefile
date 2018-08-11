@@ -1,4 +1,5 @@
-# Make sure the build command (line 4) is a hard tab not spaces, or else make will not compile.
+# For newbie to Makefile, make sure the build commands (line 4 and 7) 
+# are a hard tab not spaces, or else make will not compile.
 
 hello: hello.c
 	gcc -o hello hello.c
