@@ -1,0 +1,5 @@
+Package: helloworld
+Version: 0.1
+Maintainer: Gideon Tsang
+Architecture: armhf
+Description: hello world deb
