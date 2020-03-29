@@ -77,7 +77,7 @@ Setting up gcc (4:7.4.0-1ubuntu2.3) ...
 # gcc hello.c -o hello
 # file hello
 hello: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-, for GNU/Linux 3.7.0, BuildID[sha1]=cb2cb2261cf5301273db521b7632450cbf8e9ecb, not stripped
-root@900X3T:~/hello_world# ./hello 
+# ./hello 
 Hello, World!
 ``` 
 There, you installed gcc, downloaded other hello world examples, and compiled ARM64 binaries with all desktop's Intel cores!
